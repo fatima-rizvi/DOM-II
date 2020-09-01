@@ -45,22 +45,52 @@ adventureImg.addEventListener('dblclick', function(event) {
     becomeGarfield();
 })
 
+//mousedown
+const contentDestination = document.querySelector('.content-destination');
+const destinationImage = contentDestination.querySelector('img');
+destinationImage.addEventListener('mousedown', function(event){
+    console.log('Hi');
+    destinationImage.style.visibility = 'hidden';
+});
+
+//contextmenu
+document.addEventListener('contextmenu', function(menu) {
+    body.style.backgroundImage = `url("https://www.publicdomainpictures.net/pictures/90000/velka/question-marks-background.jpg")`;
+});
+
+//click
+
+document.addEventListener('click', function(event) {
+    body.style.backgroundImage = '';
+    body.style.color = 'black';
+    body.style.backgroundColor = 'white';
+    header.style.color = 'black';
+    header.style.backgroundColor = 'white';
+    footer.style.color = 'black';
+    footer.style.backgroundColor = '#FFEBCD';
+    bottomButton1.style.backgroundColor = '#17A2B8';
+    bottomButton2.style.backgroundColor = '#17A2B8';
+    bottomButton3.style.backgroundColor = '#17A2B8';
+});
+
+//mouseup   try to rotate an image
+
 // //focus AND blur
 // bottomButton1.addEventListener('focus', function(event) {
 //     debugger
 //     bottomButton1.style.backgroundColor = 'yellow';
 // });
 
-//keyup
-const mainContainer = document.querySelector('.container')
-const firstContentSection = document.querySelector('.content-section');
-mainContainer.addEventListener('keyup', function(event) {
-    debugger
-    if(event.key === "4"){
-        let deleteThis = firstContentSection.nextElementSibling;
-        mainContainer.remove(deleteThis);
-    }
-})
+// //keyup
+// const mainContainer = document.querySelector('.container')
+// const firstContentSection = document.querySelector('.content-section');
+// mainContainer.addEventListener('keyup', function(event) {
+//     debugger
+//     if(event.key === "4"){
+//         let deleteThis = firstContentSection.nextElementSibling;
+//         mainContainer.remove(deleteThis);
+//     }
+// })
 
 //Helper functions
 function changeHeaderImg () {
