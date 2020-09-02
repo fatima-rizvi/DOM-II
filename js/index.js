@@ -159,7 +159,7 @@ contentBoxesText.forEach((textEl) => {
 
 contentBoxes.forEach((boxEl) => {
     boxEl.addEventListener('click', (event) => {
-        boxEl.style.backgroundColor = 'firebrick';
+        boxEl.style.border = '1px dotted black';
     })
 })
 
