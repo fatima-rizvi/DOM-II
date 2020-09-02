@@ -59,9 +59,9 @@ document.addEventListener('contextmenu', function(event) {
 
 //click
 
-// document.addEventListener('click', function(event) {
-//     colorReset();
-// });
+document.addEventListener('click', function(event) {
+    colorReset();
+});
 
 //copy 
 
@@ -145,55 +145,29 @@ function changeToWarn () {
 
 
 //Stop Propagation
-Array.from(document.images).forEach(element => {
-    element.addEventListener('click', event => {
-        element.style.color = 'purple'
+const contentBoxes = document.querySelectorAll('.content-section');
+console.log(contentBoxes);
+const contentBoxesText = document.querySelectorAll('.text-content');
+console.log(contentBoxesText);
+
+contentBoxesText.forEach((textEl) => {
+    textEl.addEventListener('click', (event) => {
         event.stopPropagation();
+        textEl.style.color = 'blue';
     })
 })
 
-//failed attemps at stopping propagation :(((((
-//const destinationContainer = document.querySelector('.content-pick');
-// Array.from(destinationContainer.all).forEach(element => {
-//     element.addEventListener('click', event => {
-//         event.target.style.backgroundColor = 'yellow';
-//     })
-// });
+contentBoxes.forEach((boxEl) => {
+    boxEl.addEventListener('click', (event) => {
+        boxEl.style.backgroundColor = 'firebrick';
+    })
+})
 
-// const letsGoText = letsGoSection.querySelector('.text-content')
-// const letsGoP = letsGoText.querySelector('p');
-// console.log(letsGoText);
-// letsGoText.forEach(element => {
-//     element.addEventListener('click', function(event) {
-//         console.log(element);
-//         element.style.color = 'purple';
-//     });
-// });
+//Stop nav items from refreshing the page
+const navItems = document.querySelectorAll('.nav-link');
 
-// const letsGoText = letsGoSection.querySelector('.text-content')
-// const letsGoP = letsGoText.getElementsByClassName('p');
-// console.log(letsGoText);
-
-// const letsGoArray = Array.from(letsGoSection.all);
-
-// letsGoArray.forEach(element => {
-//     element.addEventListener('click', function(event) {
-//         console.log(element);
-//         element.style.color = 'purple';
-//     });
-// });
-
-// Array.from(body.elements).forEach(element => {
-//     element.addEventListener('click', event => {
-//         let current = event.currentTarget
-//         current.style.color = 'purple';
-//         //event.stopPropagation(); //kills thw bubbling in its tracks, don't use without good reason
- 
-//     })
-// })
-
-
-// letsGoSection.addEventListener('mouseover', function(event) {
-//     console.log(letsGoP);
-//     letsGoP.style.color = 'purple';
-// });
+navItems.forEach((element) => {
+    element.addEventListener('click', (event) => {
+        event.preventDefault();
+      })
+})
