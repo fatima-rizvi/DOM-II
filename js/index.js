@@ -75,26 +75,6 @@ adventureImg.addEventListener('dragstart', function(event) {
     adventureImg.setAttribute('src','https://accuform-img2.akamaized.net/files/damObject/Image/huge/MEQM613.jpg');
 })
 
-//mouseup   try to rotate an image
-
-
-// //focus AND blur
-// bottomButton1.addEventListener('focus', function(event) {
-//     debugger
-//     bottomButton1.style.backgroundColor = 'yellow';
-// });
-
-// //keyup
-// const mainContainer = document.querySelector('.container')
-// const firstContentSection = document.querySelector('.content-section');
-// mainContainer.addEventListener('keyup', function(event) {
-//     debugger
-//     if(event.key === "4"){
-//         let deleteThis = firstContentSection.nextElementSibling;
-//         mainContainer.remove(deleteThis);
-//     }
-// })
-
 //Helper functions
 function changeHeaderImg () {
     headerImg.setAttribute('src','https://kids.scholastic.com/content/dam/scholastic/kids/header/the-magic-school-bus/msb_header2.jpg');
