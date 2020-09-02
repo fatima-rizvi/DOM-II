@@ -49,30 +49,29 @@ adventureImg.addEventListener('dblclick', function(event) {
 const contentDestination = document.querySelector('.content-destination');
 const destinationImage = contentDestination.querySelector('img');
 destinationImage.addEventListener('mousedown', function(event){
-    console.log('Hi');
-    destinationImage.style.visibility = 'hidden';
+    hideImage();
 });
 
 //contextmenu
 document.addEventListener('contextmenu', function(event) {
-    body.style.backgroundImage = `url("https://www.publicdomainpictures.net/pictures/90000/velka/question-marks-background.jpg")`;
+    helpBackground();
 });
 
 //click
 
-document.addEventListener('click', function(event) {
-    colorReset();
-});
+// document.addEventListener('click', function(event) {
+//     colorReset();
+// });
 
 //copy 
 
 document.addEventListener('copy', function(event) {
-    body.style.backgroundImage = `url("https://markbondffl.files.wordpress.com/2016/01/stop-plagiarism.jpg")`;
+    noPlagiarismImgSwitch();
 })
 
 //dragstart
 adventureImg.addEventListener('dragstart', function(event) {
-    adventureImg.setAttribute('src','https://accuform-img2.akamaized.net/files/damObject/Image/huge/MEQM613.jpg');
+    changeToWarn();
 })
 
 //Helper functions
@@ -115,6 +114,14 @@ function switchMap() {
     mapImg.setAttribute('src','https://i.pinimg.com/originals/65/80/d2/6580d2bed791e628011f75973b5c788d.jpg');
 }
 
+function helpBackground () {
+    body.style.backgroundImage = `url("https://www.publicdomainpictures.net/pictures/90000/velka/question-marks-background.jpg")`;
+}
+
+function hideImage () {
+    destinationImage.style.visibility = 'hidden';
+}
+
 function colorReset () {
     body.style.backgroundImage = '';
     body.style.color = 'black';
@@ -126,4 +133,67 @@ function colorReset () {
     bottomButton1.style.backgroundColor = '#17A2B8';
     bottomButton2.style.backgroundColor = '#17A2B8';
     bottomButton3.style.backgroundColor = '#17A2B8';
-};
+}
+
+function noPlagiarismImgSwitch () {
+    body.style.backgroundImage = `url("https://markbondffl.files.wordpress.com/2016/01/stop-plagiarism.jpg")`;
+}
+
+function changeToWarn () {
+    adventureImg.setAttribute('src','https://accuform-img2.akamaized.net/files/damObject/Image/huge/MEQM613.jpg');
+}
+
+
+//Stop Propagation
+Array.from(document.images).forEach(element => {
+    element.addEventListener('click', event => {
+        element.style.color = 'purple'
+        event.stopPropagation();
+    })
+})
+
+//failed attemps at stopping propagation :(((((
+//const destinationContainer = document.querySelector('.content-pick');
+// Array.from(destinationContainer.all).forEach(element => {
+//     element.addEventListener('click', event => {
+//         event.target.style.backgroundColor = 'yellow';
+//     })
+// });
+
+// const letsGoText = letsGoSection.querySelector('.text-content')
+// const letsGoP = letsGoText.querySelector('p');
+// console.log(letsGoText);
+// letsGoText.forEach(element => {
+//     element.addEventListener('click', function(event) {
+//         console.log(element);
+//         element.style.color = 'purple';
+//     });
+// });
+
+// const letsGoText = letsGoSection.querySelector('.text-content')
+// const letsGoP = letsGoText.getElementsByClassName('p');
+// console.log(letsGoText);
+
+// const letsGoArray = Array.from(letsGoSection.all);
+
+// letsGoArray.forEach(element => {
+//     element.addEventListener('click', function(event) {
+//         console.log(element);
+//         element.style.color = 'purple';
+//     });
+// });
+
+// Array.from(body.elements).forEach(element => {
+//     element.addEventListener('click', event => {
+//         let current = event.currentTarget
+//         current.style.color = 'purple';
+//         //event.stopPropagation(); //kills thw bubbling in its tracks, don't use without good reason
+ 
+//     })
+// })
+
+
+// letsGoSection.addEventListener('mouseover', function(event) {
+//     console.log(letsGoP);
+//     letsGoP.style.color = 'purple';
+// });
