@@ -54,26 +54,29 @@ destinationImage.addEventListener('mousedown', function(event){
 });
 
 //contextmenu
-document.addEventListener('contextmenu', function(menu) {
+document.addEventListener('contextmenu', function(event) {
     body.style.backgroundImage = `url("https://www.publicdomainpictures.net/pictures/90000/velka/question-marks-background.jpg")`;
 });
 
 //click
 
 document.addEventListener('click', function(event) {
-    body.style.backgroundImage = '';
-    body.style.color = 'black';
-    body.style.backgroundColor = 'white';
-    header.style.color = 'black';
-    header.style.backgroundColor = 'white';
-    footer.style.color = 'black';
-    footer.style.backgroundColor = '#FFEBCD';
-    bottomButton1.style.backgroundColor = '#17A2B8';
-    bottomButton2.style.backgroundColor = '#17A2B8';
-    bottomButton3.style.backgroundColor = '#17A2B8';
+    colorReset();
 });
 
+//copy 
+
+document.addEventListener('copy', function(event) {
+    body.style.backgroundImage = `url("https://markbondffl.files.wordpress.com/2016/01/stop-plagiarism.jpg")`;
+})
+
+//dragstart
+adventureImg.addEventListener('dragstart', function(event) {
+    adventureImg.setAttribute('src','https://accuform-img2.akamaized.net/files/damObject/Image/huge/MEQM613.jpg');
+})
+
 //mouseup   try to rotate an image
+
 
 // //focus AND blur
 // bottomButton1.addEventListener('focus', function(event) {
@@ -131,3 +134,16 @@ function becomeGarfield () {
 function switchMap() {
     mapImg.setAttribute('src','https://i.pinimg.com/originals/65/80/d2/6580d2bed791e628011f75973b5c788d.jpg');
 }
+
+function colorReset () {
+    body.style.backgroundImage = '';
+    body.style.color = 'black';
+    body.style.backgroundColor = 'white';
+    header.style.color = 'black';
+    header.style.backgroundColor = 'white';
+    footer.style.color = 'black';
+    footer.style.backgroundColor = '#FFEBCD';
+    bottomButton1.style.backgroundColor = '#17A2B8';
+    bottomButton2.style.backgroundColor = '#17A2B8';
+    bottomButton3.style.backgroundColor = '#17A2B8';
+};
